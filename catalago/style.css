@@ -26,10 +26,29 @@ h2{
 
 }
 .dfilme{
-   background-image: url('DL.png');
+   background-image: url('assets/DL.png');
    width: 700px;
    height: 900px;
    background-repeat: no-repeat;
-   background-position: center;
-   
+   display: block;
+   margin: 0 auto;  
 }   
+.conteiner{
+     width: 100%;
+     min-height: 300px;
+     max-height: 100%;
+     background: rgb(140, 103, 103);
+}
+.button1{
+    display: block;
+    margin-right: auto;
+    height: 50px;
+    width: 50px;
+
+}
+.button2{
+    display: block;
+    margin-left: auto;
+    height: 50px;
+    width: 50px;
+}
