@@ -1,54 +1,248 @@
-body{
-    background-color : gray;
+/* --- 0. Variáveis e Reset Básico (Melhor Prática) --- */
+:root {
+    /* Cores */
+    --cor-principal: rgb(229, 9, 20);      /* Ex: Vermelho, usado em títulos/destaques */
+    --cor-fundo-body: #141414;            /* Fundo escuro */
+    --cor-fundo-card: #222222;            /* Fundo dos cards (C) */
+    --cor-texto-claro: #f5f5f1;
+    --cor-tabela-header: rgb(50, 50, 50); /* Cor para cabeçalho da tabela */
     
+    /* Tipografia */
+    --fonte-principal: 'Arial', sans-serif;
     
+    /* Espaçamentos e Bordas */
+    --padding-secao: 3rem 0;
+    --border-radius-padrao: 8px;
 }
 
-h1{
-    color: rgb(167, 24, 24);
-    text-align: center;
-    font-size: 75px;
-    font-style: bold;
-    font-family: 'Times New Roman', Times, serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border não alterem a largura/altura */
 }
-h2{
-    color: rgb(19, 19, 19);
-    text-align: center;
-    font-size: 30px;
-    font-style:italic;
+
+body {
+    background-color: var(--cor-fundo-body);
+    color: var(--cor-texto-claro);
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
 }
-.destaque{
-    border: 1px solid black;
-    background: peachpuff;
-    padding: 8px;
+
+.secao-titulo {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2em;
+    color: var(--cor-principal);
+}
+
+/* --- A. Cabeçalho (header) --- */
+.cabecalho {
+    /* Background com background-image (banner) (A) */
+    background-image: url('https://via.placeholder.com/1500x300/101010/FFFFFF?text=CINEMA+BANNER+PLACEHOLDER');
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Altura de exemplo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* h1 estilizado com cor RGB e text-shadow (A) */
+.titulo-principal {
+    color: rgb(255, 255, 0); /* Exemplo de cor RGB */
+    font-size: 4em;
+    /* text-shadow para destacar sobre o banner (A) */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); 
+}
+
+/* h2 em itálico usando font-style (A) */
+.subtitulo-cabecalho {
+    color: white;
+    font-size: 1.5em;
+    font-style: italic; 
+    margin-top: 5px;
+}
+
+/* --- B. Seção Destaque da Semana --- */
+.secao-destaque {
+    padding: var(--padding-secao);
+}
+
+.card-destaque {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--cor-fundo-card);
+    /* Aplicar bordas, border-radius, padding e margin (B) */
+    border: 2px solid var(--cor-principal);
+    border-radius: var(--border-radius-padrao); 
+    padding: 20px; 
+    margin: 40px auto; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.poster-destaque {
+    width: 35%; 
+    height: auto;
+    margin-right: 20px;
     border-radius: 4px;
+}
+
+.conteudo-destaque {
+    width: 65%;
+}
+
+.lista-generos {
+    /* Lista de gêneros estilizada com list-style-type (E) */
+    list-style-type: square; 
+    margin-left: 20px;
+    color: #aaa;
+}
+
+/* --- C. Grade de Filmes (Catálogo) --- */
+.secao-catalogo {
+    background-color: #0b0b0b; /* Fundo diferente do body (C) */
+    padding: var(--padding-secao);
+}
+
+/* Usando display: flex para os cards lado a lado (C) */
+.grade-filmes {
+    display: flex;
+    flex-wrap: wrap; /* Quebra de linha para responsividade */
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os cards */
+}
+
+.card-filme {
+    width: 180px; /* Largura fixa para demonstração. Pode usar porcentagem ou flex-basis. */
+    background-color: var(--cor-fundo-card);
+    padding: 10px;
     text-align: center;
+    /* Borda sutil e border-radius (C) */
+    border: 1px solid #333; 
+    border-radius: 6px; 
+    transition: transform 0.3s;
+}
 
+.card-filme:hover {
+    transform: translateY(-5px); /* Efeito de destaque ao passar o mouse */
 }
-.dfilme{
-   background-image: url('assets/DL.png');
-   width: 700px;
-   height: 900px;
-   background-repeat: no-repeat;
-   display: block;
-   margin: 0 auto;  
-}   
-.conteiner{
-     width: 100%;
-     min-height: 300px;
-     max-height: 100%;
-     background: rgb(140, 103, 103);
-}
-.button1{
-    display: block;
-    margin-right: auto;
-    height: 50px;
-    width: 50px;
 
+.card-filme img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
 }
-.button2{
-    display: block;
-    margin-left: auto;
-    height: 50px;
-    width: 50px;
+
+.titulo-link {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-weight: bold;
+    display: block; /* Garante que o link ocupe todo o espaço */
+    margin-top: 5px;
+}
+
+.titulo-link:hover {
+    color: var(--cor-principal);
+    text-decoration: underline;
+}
+
+.ano-genero {
+    font-size: 0.8em;
+    color: #999;
+}
+
+/* --- D. Tabela de Lançamentos/Prêmios --- */
+.secao-tabela {
+    padding: var(--padding-secao);
+}
+
+.tabela-lancamentos {
+    width: 80%;
+    margin: 0 auto;
+    /* Aplicar border-collapse (D) */
+    border-collapse: collapse; 
+    text-align: left;
+}
+
+/* Cabeçalhos destacados com background-color (D) */
+.tabela-lancamentos th {
+    background-color: var(--cor-tabela-header); 
+    color: white;
+}
+
+/* Linhas alternadas usando nth-child(even) (D) */
+.tabela-lancamentos tbody tr:nth-child(even) {
+    background-color: #333; /* Cor mais escura para linhas pares */
+}
+
+/* Aplicar padding em th/td (D) */
+.tabela-lancamentos th, .tabela-lancamentos td {
+    padding: 12px 15px; 
+    border: 1px solid #444;
+}
+
+/* --- E. Lista de Gêneros e Navegação --- */
+
+.menu-navegacao {
+    background-color: #000;
+    padding: 10px 0;
+    position: sticky; /* Menu fixo no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-navegacao ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-navegacao li {
+    margin: 0 15px;
+}
+
+.menu-navegacao a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-navegacao a:hover {
+    text-decoration: underline;
+    color: var(--cor-texto-claro);
+}
+
+.secao-generos {
+    padding: var(--padding-secao);
+    text-align: center;
+}
+
+.lista-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-position: inside;
+    
+    /* Lista de gêneros estilizada com list-style-type (E) */
+    list-style-type: "🎬 "; /* Usando um emoji/string em vez de bullet */
+    margin-top: 20px;
+}
+
+.lista-categorias li {
+    background-color: var(--cor-fundo-card);
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+/* Footer simples */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    font-size: 0.9em;
 }

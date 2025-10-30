@@ -1,28 +1,137 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cine maravilha</title>
+    <title>Cine Maravilha - Catálogo de Filmes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>CINE MARAVILHA</h1>
-    <h2>Os melhores Filmes</h2>
-    <p class="destaque">Destaques da semana</p>
-    <p class="dfilme"></p>
-    <h3 style="text-align: center;">DEMON SLAYER</h3>
-    <hr>
-    <h3 class="destaque">Catálogo de Filmes</h3>
-    <div class="conteiner">
-        <button class="button1" onclick="alert('oi')">
-            <img src="assets/prev.png" class="button1" alt="previous">
-        </button>
+
+    <nav class="menu-navegacao">
+        <ul>
+            <li><a href="#destaque">Destaque</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#lancamentos">Lançamentos</a></li>
+            <li><a href="#generos">Gêneros</a></li>
+        </ul>
+    </nav>
+
+    <header class="cabecalho">
+        <h1 class="titulo-principal">CINE MARAVILHA</h1>
+        <h2 class="subtitulo-cabecalho">Seu Catálogo de Filmes</h2>
+    </header>
+
+    <section id="destaque" class="secao-destaque">
+        <h3 class="secao-titulo">Destaque da Semana</h3>
         
-      <button class="button2">
-        <img src="assets/next.png" class="button2" alt="next">
-      </button>
-    </div>
+        <article class="card-destaque">
+            <img src="assets/DL.png" alt="Poster do Filme Destaque" class="poster-destaque">
+            <div class="conteudo-desaque">
+                <h4>Demon slayer: Castelo Infinito</h4>
+                <p class="sinopse">Os Pilares agora enfrentam Muzan e decidem atacá-lo juntos. No entanto, eles são transportados para a Fortaleza Infinita antes que possam desferir um único golpe e, portanto, são separados.</p>
+                
+                <p>Gêneros:</p>
+                <ul class="lista-generos">
+                    <li> Anime</li>
+                    <li>Animação</li>
+                    <li>Ação</li>
+                    <li>Aventura</li>
+                </ul>
+            </div>
+        </article>
+    </section>
+
+    <section id="catalogo" class="secao-catalogo">
+        <h3 class="secao-titulo">🎬 Grade de Filmes</h3>
+        
+        <div class="grade-filmes">
+            <div class="card-filme">
+                <img src="assets/encanto.jpeg" alt="Poster do Filme 1">
+                <p class="ano-genero">2021 | Infantil/Fantasia</p>
+                <a href="#" class="titulo-link">Encanto</a>
+            </div>
+
+            <div class="card-filme">
+                <img src="assets/nogame.jpg" alt="Poster do Filme 2">
+                <p class="ano-genero">2017 | Fantasia, Aventura</p>
+                <a href="#" class="titulo-link">No game no life: zero</a>
+            </div>
+            
+            <div class="card-filme">
+                <img src="assets/raya.jpg" alt="Poster do Filme 3">
+                <p class="ano-genero">2021 | Infantil/Fantasia</p>
+                <a href="#" class="titulo-link">Raya e o ultimo dragão</a>
+            </div>
+            <div class="card-filme">
+                <img src="assets/your.jpg" alt="Poster do Filme 4">
+                <p class="ano-genero"> 2016 | Romance/Fantasia</p>
+                <a href="#" class="titulo-link">Your name/Kimi no na wa</a>
+            </div>
+
+            </div>
+    </section>
+
+    <section id="lancamentos" class="secao-tabela">
+        <h3 class="secao-titulo">🏆 Tabela de Lançamentos</h3>
+        
+        <table class="tabela-lancamentos">
+            <caption>Próximos Lançamentos e Avaliações</caption>
+            <thead>
+                <tr>
+                    <th>Filme</th> <th>Ano</th>
+                    <th>Nota (IMDB)</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Duna: Parte Dois</td>
+                    <td>2024</td>
+                    <td>8.5</td>
+                    <td>Estreou</td>
+                </tr>
+                <tr>
+                    <td>Furiosa</td>
+                    <td>2024</td>
+                    <td>N/A</td>
+                    <td>Pendente</td>
+                </tr>
+                <tr>
+                    <td>Oppenheimer</td>
+                    <td>2023</td>
+                    <td>8.6</td>
+                    <td>Lançado</td>
+                </tr>
+                 <tr>
+                    <td>Missão: Impossível 7</td>
+                    <td>2023</td>
+                    <td>7.8</td>
+                    <td>Lançado</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
     
+    <section id="generos" class="secao-generos">
+        <h3 class="secao-titulo">Categorias de Gêneros</h3>
+        
+        <ul class="lista-categorias">
+            <li>Ação</li>
+            <li>Anime</li>
+            <li>Animação</li>
+            <li>Aventura</li>
+            <li>Comédia</li>
+            <li>Drama</li>
+            <li>Ficção Científica</li>
+            <li>Terror</li>
+            <li>Romance</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cine Maravilha. Prática CSS.</p>
+    </footer>
+
 </body>
 </html>
